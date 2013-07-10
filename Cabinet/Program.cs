@@ -8,6 +8,8 @@ namespace Cabinet
 {
     static class Program
     {
+        //public static Utilizatori utilizator = null;
+        public static Medic utilizator = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +18,19 @@ namespace Cabinet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var loginDlg = new LoginForm();
+            if (loginDlg.ShowDialog() == DialogResult.OK)
+            {
+                if (utilizator.isAdmin)
+                {
+                    Application.Run(new AdminForm());
+                }
+                else
+                {
+                    Application.Run(new MedicForm());
+                }                
+            }             
         }
     }
 }
