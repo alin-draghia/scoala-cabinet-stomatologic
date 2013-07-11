@@ -135,33 +135,33 @@
             // mediciToolStripMenuItem
             // 
             this.mediciToolStripMenuItem.Name = "mediciToolStripMenuItem";
-            this.mediciToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.mediciToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.mediciToolStripMenuItem.Text = "Medici";
             this.mediciToolStripMenuItem.Click += new System.EventHandler(this.mediciToolStripMenuItem_Click);
             // 
             // interventiiToolStripMenuItem
             // 
             this.interventiiToolStripMenuItem.Name = "interventiiToolStripMenuItem";
-            this.interventiiToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.interventiiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.interventiiToolStripMenuItem.Text = "Interventii";
             this.interventiiToolStripMenuItem.Click += new System.EventHandler(this.interventiiToolStripMenuItem_Click);
             // 
             // preturiToolStripMenuItem
             // 
             this.preturiToolStripMenuItem.Name = "preturiToolStripMenuItem";
-            this.preturiToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.preturiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.preturiToolStripMenuItem.Text = "Preturi";
             this.preturiToolStripMenuItem.Click += new System.EventHandler(this.preturiToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // windowsMenu
@@ -277,6 +277,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(861, 475);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);

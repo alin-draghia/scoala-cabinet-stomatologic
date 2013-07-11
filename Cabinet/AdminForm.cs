@@ -128,5 +128,20 @@ namespace Cabinet
                 preturi.Show();
             }    
         }
+
+        private void btnMedici_Click(object sender, EventArgs e)
+        {
+            mediciToolStripMenuItem_Click(this, new EventArgs());
+        }
+
+        private void btnInterventii_Click(object sender, EventArgs e)
+        {
+            interventiiToolStripMenuItem_Click(this, new EventArgs());
+        }
+
+        private void btnPreturi_Click(object sender, EventArgs e)
+        {
+            preturiToolStripMenuItem_Click(this, new EventArgs());
+        }
     }
 }
