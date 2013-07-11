@@ -55,7 +55,6 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -111,7 +110,7 @@
             this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
             this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.toolBarToolStripMenuItem.Text = "&Toolbar";
-            this.toolBarToolStripMenuItem.Click += new System.EventHandler(this.ToolBarToolStripMenuItem_Click);
+            
             // 
             // statusBarToolStripMenuItem
             // 
@@ -138,33 +137,33 @@
             // mediciToolStripMenuItem
             // 
             this.mediciToolStripMenuItem.Name = "mediciToolStripMenuItem";
-            this.mediciToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.mediciToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.mediciToolStripMenuItem.Text = "Medici";
             this.mediciToolStripMenuItem.Click += new System.EventHandler(this.mediciToolStripMenuItem_Click);
             // 
             // interventiiToolStripMenuItem
             // 
             this.interventiiToolStripMenuItem.Name = "interventiiToolStripMenuItem";
-            this.interventiiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.interventiiToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.interventiiToolStripMenuItem.Text = "Interventii";
             this.interventiiToolStripMenuItem.Click += new System.EventHandler(this.interventiiToolStripMenuItem_Click);
             // 
             // preturiToolStripMenuItem
             // 
             this.preturiToolStripMenuItem.Name = "preturiToolStripMenuItem";
-            this.preturiToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.preturiToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.preturiToolStripMenuItem.Text = "Preturi";
             this.preturiToolStripMenuItem.Click += new System.EventHandler(this.preturiToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 6);
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // windowsMenu
@@ -268,14 +267,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.aboutToolStripMenuItem.Text = "&About ... ...";
             // 
-            // toolStrip
-            // 
-            this.toolStrip.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(861, 25);
-            this.toolStrip.TabIndex = 1;
-            this.toolStrip.Text = "ToolStrip";
-            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -298,7 +289,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 475);
             this.Controls.Add(this.statusStrip);
-            this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
@@ -316,7 +306,6 @@
 
 
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;

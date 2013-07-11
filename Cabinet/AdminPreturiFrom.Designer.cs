@@ -157,6 +157,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // pretBindingSource
             // 
@@ -286,6 +287,7 @@
             this.tipInterventieIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipIntervenieBindingSource, "Denumire", true));
             this.tipInterventieIDComboBox.DataSource = this.tipIntervenieBindingSource;
             this.tipInterventieIDComboBox.DisplayMember = "Denumire";
+            this.tipInterventieIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipInterventieIDComboBox.FormattingEnabled = true;
             this.tipInterventieIDComboBox.Location = new System.Drawing.Point(34, 106);
             this.tipInterventieIDComboBox.Name = "tipInterventieIDComboBox";
@@ -366,6 +368,8 @@
             this.Controls.Add(this.pretDataGridView);
             this.Name = "AdminPreturiFrom";
             this.Text = "Preturi";
+            this.Activated += new System.EventHandler(this.AdminPreturiFrom_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminPreturiFrom_FormClosing);
             this.Load += new System.EventHandler(this.AdminPreturiFrom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pretBindingNavigator)).EndInit();
             this.pretBindingNavigator.ResumeLayout(false);

@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminInterventiiForm));
             System.Windows.Forms.Label denumireLabel;
             System.Windows.Forms.Label tipInterventieIDLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminInterventiiForm));
             this.tipIntervenieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipIntervenieBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.tipIntervenieBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.denumireTextBox = new System.Windows.Forms.TextBox();
             this.tipInterventieIDTextBox = new System.Windows.Forms.TextBox();
@@ -58,6 +58,25 @@
             this.tipIntervenieBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipIntervenieDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // denumireLabel
+            // 
+            denumireLabel.AutoSize = true;
+            denumireLabel.Location = new System.Drawing.Point(20, 42);
+            denumireLabel.Name = "denumireLabel";
+            denumireLabel.Size = new System.Drawing.Size(55, 13);
+            denumireLabel.TabIndex = 1;
+            denumireLabel.Text = "Denumire:";
+            // 
+            // tipInterventieIDLabel
+            // 
+            tipInterventieIDLabel.AutoSize = true;
+            tipInterventieIDLabel.Location = new System.Drawing.Point(92, 274);
+            tipInterventieIDLabel.Name = "tipInterventieIDLabel";
+            tipInterventieIDLabel.Size = new System.Drawing.Size(92, 13);
+            tipInterventieIDLabel.TabIndex = 3;
+            tipInterventieIDLabel.Text = "Tip Interventie ID:";
+            tipInterventieIDLabel.Visible = false;
             // 
             // tipIntervenieBindingSource
             // 
@@ -93,6 +112,31 @@
             this.tipIntervenieBindingNavigator.TabIndex = 0;
             this.tipIntervenieBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -125,16 +169,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -157,44 +194,17 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // tipIntervenieBindingNavigatorSaveItem
             // 
             this.tipIntervenieBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tipIntervenieBindingNavigatorSaveItem.Enabled = false;
             this.tipIntervenieBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("tipIntervenieBindingNavigatorSaveItem.Image")));
             this.tipIntervenieBindingNavigatorSaveItem.Name = "tipIntervenieBindingNavigatorSaveItem";
             this.tipIntervenieBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.tipIntervenieBindingNavigatorSaveItem.Text = "Save Data";
-            // 
-            // denumireLabel
-            // 
-            denumireLabel.AutoSize = true;
-            denumireLabel.Location = new System.Drawing.Point(20, 42);
-            denumireLabel.Name = "denumireLabel";
-            denumireLabel.Size = new System.Drawing.Size(55, 13);
-            denumireLabel.TabIndex = 1;
-            denumireLabel.Text = "Denumire:";
+            this.tipIntervenieBindingNavigatorSaveItem.Click += new System.EventHandler(this.tipIntervenieBindingNavigatorSaveItem_Click);
             // 
             // denumireTextBox
             // 
@@ -203,16 +213,6 @@
             this.denumireTextBox.Name = "denumireTextBox";
             this.denumireTextBox.Size = new System.Drawing.Size(300, 20);
             this.denumireTextBox.TabIndex = 1;
-            // 
-            // tipInterventieIDLabel
-            // 
-            tipInterventieIDLabel.AutoSize = true;
-            tipInterventieIDLabel.Location = new System.Drawing.Point(92, 274);
-            tipInterventieIDLabel.Name = "tipInterventieIDLabel";
-            tipInterventieIDLabel.Size = new System.Drawing.Size(92, 13);
-            tipInterventieIDLabel.TabIndex = 3;
-            tipInterventieIDLabel.Text = "Tip Interventie ID:";
-            tipInterventieIDLabel.Visible = false;
             // 
             // tipInterventieIDTextBox
             // 
@@ -264,6 +264,8 @@
             this.Controls.Add(this.tipIntervenieDataGridView);
             this.Name = "AdminInterventiiForm";
             this.Text = "Interventii";
+            this.Activated += new System.EventHandler(this.AdminInterventiiForm_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminInterventiiForm_FormClosing);
             this.Load += new System.EventHandler(this.AdminInterventiiForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tipIntervenieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipIntervenieBindingNavigator)).EndInit();
