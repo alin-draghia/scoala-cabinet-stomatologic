@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Cabinet.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +21,13 @@ namespace Cabinet
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (tbUser.Text.Equals(Resources.AdminUser) &&
+                tbPass.Text.Equals(Resources.AdminPass))
+            {
+                Medic admin = new Medic() { isAdmin = true };
+                Program.utilizator_curent = admin;
+                return;
+            }
 
             var db = new CabinetEntities();
             var user = (from u in db.Medic
