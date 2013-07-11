@@ -25,10 +25,14 @@ namespace Cabinet
         {
            
             context.Pret.ToList();
-            context.TipIntervenie.ToList();
+            var tipInterventii = context.TipIntervenie.ToList();
             pretBindingSource.DataSource = context.Pret.Local;
-            tipIntervenieBindingSource.DataSource = context.TipIntervenie.Local;
-           
+            tipInterventieIDComboBox.DataSource = tipInterventii;
+            tipInterventieIDComboBox.DisplayMember = "Denumire";
+            tipInterventieIDComboBox.ValueMember = "TipInterventieID";
+            dataGridViewTextBoxColumn2.DataSource = tipInterventii;
+            dataGridViewTextBoxColumn2.DisplayMember = "Denumire";
+            dataGridViewTextBoxColumn2.ValueMember = "TipInterventieID";
         }
 
         private void pretDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -50,7 +54,7 @@ namespace Cabinet
         {
             dataInceputDateTimePicker.Value = DateTime.Now;
             dataSfarsitDateTimePicker.Value = DateTime.Now;
-            //tipInterventieIDComboBox.SelectedIndex = 1;
+            tipInterventieIDComboBox.SelectedIndex = 0;
         }
 
         private void SalveazaInBazaDeDate()

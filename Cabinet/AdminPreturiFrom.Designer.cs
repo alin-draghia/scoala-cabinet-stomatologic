@@ -37,7 +37,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPreturiFrom));
             this.pretBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.pretBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -54,10 +53,10 @@
             this.pret1TextBox = new System.Windows.Forms.TextBox();
             this.pretIDTextBox = new System.Windows.Forms.TextBox();
             this.tipInterventieIDComboBox = new System.Windows.Forms.ComboBox();
-            this.tipIntervenieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pretDataGridView = new System.Windows.Forms.DataGridView();
+            this.pretBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,9 +67,8 @@
             tipInterventieIDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pretBindingNavigator)).BeginInit();
             this.pretBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pretBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipIntervenieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pretDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pretBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataInceputLabel
@@ -158,10 +156,6 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // pretBindingSource
-            // 
-            this.pretBindingSource.DataSource = typeof(Cabinet.Pret);
             // 
             // bindingNavigatorCountItem
             // 
@@ -284,9 +278,6 @@
             // tipInterventieIDComboBox
             // 
             this.tipInterventieIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pretBindingSource, "TipInterventieID", true));
-            this.tipInterventieIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipIntervenieBindingSource, "Denumire", true));
-            this.tipInterventieIDComboBox.DataSource = this.tipIntervenieBindingSource;
-            this.tipInterventieIDComboBox.DisplayMember = "Denumire";
             this.tipInterventieIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipInterventieIDComboBox.FormattingEnabled = true;
             this.tipInterventieIDComboBox.Location = new System.Drawing.Point(34, 106);
@@ -294,10 +285,6 @@
             this.tipInterventieIDComboBox.Size = new System.Drawing.Size(200, 21);
             this.tipInterventieIDComboBox.TabIndex = 10;
             this.tipInterventieIDComboBox.ValueMember = "TipInterventieID";
-            // 
-            // tipIntervenieBindingSource
-            // 
-            this.tipIntervenieBindingSource.DataSource = typeof(Cabinet.TipIntervenie);
             // 
             // pretDataGridView
             // 
@@ -317,6 +304,10 @@
             this.pretDataGridView.TabIndex = 11;
             this.pretDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.pretDataGridView_DataError);
             // 
+            // pretBindingSource
+            // 
+            this.pretBindingSource.DataSource = typeof(Cabinet.Pret);
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "PretID";
@@ -330,6 +321,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Interventie";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -374,9 +366,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pretBindingNavigator)).EndInit();
             this.pretBindingNavigator.ResumeLayout(false);
             this.pretBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pretBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipIntervenieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pretDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pretBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,9 +395,8 @@
         private System.Windows.Forms.TextBox pretIDTextBox;
         private System.Windows.Forms.ComboBox tipInterventieIDComboBox;
         private System.Windows.Forms.DataGridView pretDataGridView;
-        private System.Windows.Forms.BindingSource tipIntervenieBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
