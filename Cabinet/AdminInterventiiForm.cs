@@ -11,29 +11,24 @@ using System.Windows.Forms;
 
 namespace Cabinet
 {
-    public partial class AdminMedicForm : Form
+    public partial class AdminInterventiiForm : Form
     {
 
         CabinetEntities context = new CabinetEntities();
 
-        public AdminMedicForm()
+        public AdminInterventiiForm()
         {
             InitializeComponent();
         }
 
-        private void AdminMedicForm_Load(object sender, EventArgs e)
+        private void AdminInterventiiForm_Load(object sender, EventArgs e)
         {
            
-            context.Medic.ToList();
-            medicBindingSource.DataSource = context.Medic.Local;
+            context.TipIntervenie.ToList();
+            tipIntervenieBindingSource.DataSource = context.TipIntervenie.Local;
         }
 
-        private void AdminMedicForm_Activated(object sender, EventArgs e)
-        {
-            medicBindingSource.ResetBindings(false);
-        }
-
-        private void medicBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void tipIntervenieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -49,25 +44,8 @@ namespace Cabinet
                     "Eroare",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                
             }
         }
-
-        private void AdminMedicForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            var db = context;
-            var tracker = db.ChangeTracker;
-            foreach (var row in db.Medic)
-            {
-                if (db.Entry(row).State == EntityState.Added )
-                {
-                }
-            }
-        }
-
-
-        
-
 
     }
 }

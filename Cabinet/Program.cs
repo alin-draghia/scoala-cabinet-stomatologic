@@ -9,7 +9,8 @@ namespace Cabinet
     static class Program
     {
         //public static Utilizatori utilizator = null;
-        public static Medic utilizator = null;
+        public static Medic utilizator_curent = null;
+        //public static CabinetEntities db = new CabinetEntities();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -22,7 +23,7 @@ namespace Cabinet
             var loginDlg = new LoginForm();
             if (loginDlg.ShowDialog() == DialogResult.OK)
             {
-                if (utilizator.isAdmin)
+                if (utilizator_curent.isAdmin)
                 {
                     Application.Run(new AdminForm());
                 }

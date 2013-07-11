@@ -32,7 +32,7 @@ namespace Cabinet
             }
             else
             {
-                Program.utilizator = user;
+                Program.utilizator_curent = user;
             }
         }
 

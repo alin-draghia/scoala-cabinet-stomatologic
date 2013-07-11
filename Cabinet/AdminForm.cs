@@ -110,5 +110,21 @@ namespace Cabinet
             medicForm.MdiParent = this;
             medicForm.Show();
         }
+
+       
+
+        private void interventiiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var interventiiForm = new AdminInterventiiForm();
+            interventiiForm.MdiParent = this;
+            interventiiForm.Show();
+        }
+
+        private void preturiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var preturi = new AdminPreturiFrom();
+            preturi.MdiParent = this;
+            preturi.Show();
+        }
     }
 }
