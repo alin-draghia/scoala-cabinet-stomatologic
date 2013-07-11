@@ -101,25 +101,32 @@ namespace Cabinet
 
         private void mediciToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var medicForm = new AdminMedicForm();
-            medicForm.MdiParent = this;
-            medicForm.Show();
+            if ((Application.OpenForms["AdminMedicForm"] as AdminMedicForm) == null)
+            {
+                var medicForm = new AdminMedicForm();
+                medicForm.MdiParent = this;
+                medicForm.Show();
+            }    
         }
 
-       
-
         private void interventiiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var interventiiForm = new AdminInterventiiForm();
-            interventiiForm.MdiParent = this;
-            interventiiForm.Show();
+        {            
+            if ((Application.OpenForms["AdminInterventiiForm"] as AdminInterventiiForm) == null)
+            {
+                var interventiiForm = new AdminInterventiiForm();
+                interventiiForm.MdiParent = this;
+                interventiiForm.Show();
+            }    
         }
 
         private void preturiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var preturi = new AdminPreturiFrom();
-            preturi.MdiParent = this;
-            preturi.Show();
+        {           
+            if ((Application.OpenForms["AdminPreturiFrom"] as AdminPreturiFrom) == null)
+            {
+                var preturi = new AdminPreturiFrom();
+                preturi.MdiParent = this;
+                preturi.Show();
+            }    
         }
     }
 }
