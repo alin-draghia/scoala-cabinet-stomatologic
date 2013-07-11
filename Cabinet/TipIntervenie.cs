@@ -16,16 +16,16 @@ namespace Cabinet
     {
         public TipIntervenie()
         {
+            this.Interventie = new HashSet<Interventie>();
             this.Pret = new HashSet<Pret>();
             this.Programare = new HashSet<Programare>();
-            this.Interventie = new HashSet<Interventie>();
         }
     
         public int TipInterventieID { get; set; }
         public string Denumire { get; set; }
     
+        public virtual ICollection<Interventie> Interventie { get; set; }
         public virtual ICollection<Pret> Pret { get; set; }
         public virtual ICollection<Programare> Programare { get; set; }
-        public virtual ICollection<Interventie> Interventie { get; set; }
     }
 }

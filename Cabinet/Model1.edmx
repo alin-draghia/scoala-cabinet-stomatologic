@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CabinetModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CabinetModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="CabinetModelStoreContainer">
           <EntitySet Name="Interventie" EntityType="CabinetModel.Store.Interventie" store:Type="Tables" />
           <EntitySet Name="Medic" EntityType="CabinetModel.Store.Medic" store:Type="Tables" />
@@ -218,37 +218,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CabinetModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="CabinetEntities" p1:LazyLoadingEnabled="true" >
+        <EntityContainer Name="CabinetEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Interventie" EntityType="CabinetModel.Interventie" />
           <EntitySet Name="Medic" EntityType="CabinetModel.Medic" />
           <EntitySet Name="Pacient" EntityType="CabinetModel.Pacient" />
-          <AssociationSet Name="PacientMedic" Association="CabinetModel.PacientMedic">
-            <End Role="Medic" EntitySet="Medic" />
-            <End Role="Pacient" EntitySet="Pacient" />
-          </AssociationSet>
           <EntitySet Name="Pret" EntityType="CabinetModel.Pret" />
-          <EntitySet Name="TipIntervenie" EntityType="CabinetModel.TipIntervenie" />
-          <AssociationSet Name="TipInterventiePret" Association="CabinetModel.TipInterventiePret">
-            <End Role="TipIntervenie" EntitySet="TipIntervenie" />
-            <End Role="Pret" EntitySet="Pret" />
-          </AssociationSet>
           <EntitySet Name="Programare" EntityType="CabinetModel.Programare" />
-          <AssociationSet Name="ProgramareMedic" Association="CabinetModel.ProgramareMedic">
-            <End Role="Medic" EntitySet="Medic" />
-            <End Role="Programare" EntitySet="Programare" />
-          </AssociationSet>
-          <AssociationSet Name="ProgramarePacient" Association="CabinetModel.ProgramarePacient">
-            <End Role="Pacient" EntitySet="Pacient" />
-            <End Role="Programare" EntitySet="Programare" />
-          </AssociationSet>
-          <AssociationSet Name="ProgramareTipInterventie" Association="CabinetModel.ProgramareTipInterventie">
-            <End Role="TipIntervenie" EntitySet="TipIntervenie" />
-            <End Role="Programare" EntitySet="Programare" />
-          </AssociationSet>
-          <EntitySet Name="Interventie" EntityType="CabinetModel.Interventie" />
+          <EntitySet Name="TipIntervenie" EntityType="CabinetModel.TipIntervenie" />
           <AssociationSet Name="InterventieMedic" Association="CabinetModel.InterventieMedic">
             <End Role="Medic" EntitySet="Medic" />
             <End Role="Interventie" EntitySet="Interventie" />
@@ -265,149 +246,109 @@
             <End Role="TipIntervenie" EntitySet="TipIntervenie" />
             <End Role="Interventie" EntitySet="Interventie" />
           </AssociationSet>
+          <AssociationSet Name="PacientMedic" Association="CabinetModel.PacientMedic">
+            <End Role="Medic" EntitySet="Medic" />
+            <End Role="Pacient" EntitySet="Pacient" />
+          </AssociationSet>
+          <AssociationSet Name="ProgramareMedic" Association="CabinetModel.ProgramareMedic">
+            <End Role="Medic" EntitySet="Medic" />
+            <End Role="Programare" EntitySet="Programare" />
+          </AssociationSet>
+          <AssociationSet Name="ProgramarePacient" Association="CabinetModel.ProgramarePacient">
+            <End Role="Pacient" EntitySet="Pacient" />
+            <End Role="Programare" EntitySet="Programare" />
+          </AssociationSet>
+          <AssociationSet Name="TipInterventiePret" Association="CabinetModel.TipInterventiePret">
+            <End Role="TipIntervenie" EntitySet="TipIntervenie" />
+            <End Role="Pret" EntitySet="Pret" />
+          </AssociationSet>
+          <AssociationSet Name="ProgramareTipInterventie" Association="CabinetModel.ProgramareTipInterventie">
+            <End Role="TipIntervenie" EntitySet="TipIntervenie" />
+            <End Role="Programare" EntitySet="Programare" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Medic">
-          <Key>
-            <PropertyRef Name="MedicID" />
-          </Key>
-          <Property Type="Int32" Name="MedicID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Nume" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Prenume" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Telefon" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="User" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Pass" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="Boolean" Name="isAdmin" Nullable="false" />
-          <NavigationProperty Name="Pacient" Relationship="CabinetModel.PacientMedic" FromRole="Medic" ToRole="Pacient" />
-          <NavigationProperty Name="Programare" Relationship="CabinetModel.ProgramareMedic" FromRole="Medic" ToRole="Programare" />
-          <NavigationProperty Name="Interventie" Relationship="CabinetModel.InterventieMedic" FromRole="Medic" ToRole="Interventie" />
-        </EntityType>
-        <EntityType Name="Pacient">
-          <Key>
-            <PropertyRef Name="PacientID" />
-          </Key>
-          <Property Type="Int32" Name="PacientID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="MedicID" Nullable="false" />
-          <Property Type="String" Name="Nume" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Prenume" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Telefon" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="Boolean" Name="Sters" Nullable="false" />
-          <NavigationProperty Name="Medic" Relationship="CabinetModel.PacientMedic" FromRole="Pacient" ToRole="Medic" />
-          <NavigationProperty Name="Programare" Relationship="CabinetModel.ProgramarePacient" FromRole="Pacient" ToRole="Programare" />
-          <NavigationProperty Name="Interventie" Relationship="CabinetModel.InterventiePacient" FromRole="Pacient" ToRole="Interventie" />
-        </EntityType>
-        <Association Name="PacientMedic">
-          <End Type="CabinetModel.Medic" Role="Medic" Multiplicity="1" />
-          <End Type="CabinetModel.Pacient" Role="Pacient" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Medic">
-              <PropertyRef Name="MedicID" />
-            </Principal>
-            <Dependent Role="Pacient">
-              <PropertyRef Name="MedicID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Pret">
-          <Key>
-            <PropertyRef Name="PretID" />
-          </Key>
-          <Property Type="Int32" Name="PretID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="TipInterventieID" Nullable="false" />
-          <Property Type="DateTime" Name="DataInceput" Nullable="false" Precision="3" />
-          <Property Type="DateTime" Name="DataSfarsit" Nullable="false" Precision="3" />
-          <Property Type="Decimal" Name="Pret1" Nullable="false" Precision="19" Scale="4" />
-          <NavigationProperty Name="TipIntervenie" Relationship="CabinetModel.TipInterventiePret" FromRole="Pret" ToRole="TipIntervenie" />
-          <NavigationProperty Name="Interventie" Relationship="CabinetModel.InterventiePret" FromRole="Pret" ToRole="Interventie" />
-        </EntityType>
-        <EntityType Name="TipIntervenie">
-          <Key>
-            <PropertyRef Name="TipInterventieID" />
-          </Key>
-          <Property Type="Int32" Name="TipInterventieID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Denumire" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Pret" Relationship="CabinetModel.TipInterventiePret" FromRole="TipIntervenie" ToRole="Pret" />
-          <NavigationProperty Name="Programare" Relationship="CabinetModel.ProgramareTipInterventie" FromRole="TipIntervenie" ToRole="Programare" />
-          <NavigationProperty Name="Interventie" Relationship="CabinetModel.InterventieTipInterventie" FromRole="TipIntervenie" ToRole="Interventie" />
-        </EntityType>
-        <Association Name="TipInterventiePret">
-          <End Type="CabinetModel.TipIntervenie" Role="TipIntervenie" Multiplicity="1" />
-          <End Type="CabinetModel.Pret" Role="Pret" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipIntervenie">
-              <PropertyRef Name="TipInterventieID" />
-            </Principal>
-            <Dependent Role="Pret">
-              <PropertyRef Name="TipInterventieID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Programare">
-          <Key>
-            <PropertyRef Name="ProgramareID" />
-          </Key>
-          <Property Type="Int32" Name="ProgramareID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="MedicID" Nullable="false" />
-          <Property Type="Int32" Name="PacientID" Nullable="false" />
-          <Property Type="DateTime" Name="DataOra" Nullable="false" Precision="3" />
-          <Property Type="Int32" Name="TipInterventieID" Nullable="false" />
-          <NavigationProperty Name="Medic" Relationship="CabinetModel.ProgramareMedic" FromRole="Programare" ToRole="Medic" />
-          <NavigationProperty Name="Pacient" Relationship="CabinetModel.ProgramarePacient" FromRole="Programare" ToRole="Pacient" />
-          <NavigationProperty Name="TipIntervenie" Relationship="CabinetModel.ProgramareTipInterventie" FromRole="Programare" ToRole="TipIntervenie" />
-        </EntityType>
-        <Association Name="ProgramareMedic">
-          <End Type="CabinetModel.Medic" Role="Medic" Multiplicity="1" />
-          <End Type="CabinetModel.Programare" Role="Programare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Medic">
-              <PropertyRef Name="MedicID" />
-            </Principal>
-            <Dependent Role="Programare">
-              <PropertyRef Name="MedicID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="ProgramarePacient">
-          <End Type="CabinetModel.Pacient" Role="Pacient" Multiplicity="1" />
-          <End Type="CabinetModel.Programare" Role="Programare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pacient">
-              <PropertyRef Name="PacientID" />
-            </Principal>
-            <Dependent Role="Programare">
-              <PropertyRef Name="PacientID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="ProgramareTipInterventie">
-          <End Type="CabinetModel.TipIntervenie" Role="TipIntervenie" Multiplicity="1" />
-          <End Type="CabinetModel.Programare" Role="Programare" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TipIntervenie">
-              <PropertyRef Name="TipInterventieID" />
-            </Principal>
-            <Dependent Role="Programare">
-              <PropertyRef Name="TipInterventieID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Interventie">
           <Key>
             <PropertyRef Name="InterventieID" />
           </Key>
-          <Property Type="Int32" Name="InterventieID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="MedicID" Nullable="false" />
-          <Property Type="Int32" Name="PacientID" Nullable="false" />
-          <Property Type="Int32" Name="TipInterventieID" Nullable="false" />
-          <Property Type="DateTime" Name="DataOra" Nullable="false" Precision="3" />
-          <Property Type="Int32" Name="PretID" Nullable="false" />
+          <Property Name="InterventieID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MedicID" Type="Int32" Nullable="false" />
+          <Property Name="PacientID" Type="Int32" Nullable="false" />
+          <Property Name="TipInterventieID" Type="Int32" Nullable="false" />
+          <Property Name="DataOra" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PretID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Medic" Relationship="CabinetModel.InterventieMedic" FromRole="Interventie" ToRole="Medic" />
           <NavigationProperty Name="Pacient" Relationship="CabinetModel.InterventiePacient" FromRole="Interventie" ToRole="Pacient" />
           <NavigationProperty Name="Pret" Relationship="CabinetModel.InterventiePret" FromRole="Interventie" ToRole="Pret" />
           <NavigationProperty Name="TipIntervenie" Relationship="CabinetModel.InterventieTipInterventie" FromRole="Interventie" ToRole="TipIntervenie" />
         </EntityType>
+        <EntityType Name="Medic">
+          <Key>
+            <PropertyRef Name="MedicID" />
+          </Key>
+          <Property Name="MedicID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Prenume" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="User" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Pass" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Interventie" Relationship="CabinetModel.InterventieMedic" FromRole="Medic" ToRole="Interventie" />
+          <NavigationProperty Name="Pacient" Relationship="CabinetModel.PacientMedic" FromRole="Medic" ToRole="Pacient" />
+          <NavigationProperty Name="Programare" Relationship="CabinetModel.ProgramareMedic" FromRole="Medic" ToRole="Programare" />
+        </EntityType>
+        <EntityType Name="Pacient">
+          <Key>
+            <PropertyRef Name="PacientID" />
+          </Key>
+          <Property Name="PacientID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MedicID" Type="Int32" Nullable="false" />
+          <Property Name="Nume" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Prenume" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Sters" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Interventie" Relationship="CabinetModel.InterventiePacient" FromRole="Pacient" ToRole="Interventie" />
+          <NavigationProperty Name="Medic" Relationship="CabinetModel.PacientMedic" FromRole="Pacient" ToRole="Medic" />
+          <NavigationProperty Name="Programare" Relationship="CabinetModel.ProgramarePacient" FromRole="Pacient" ToRole="Programare" />
+        </EntityType>
+        <EntityType Name="Pret">
+          <Key>
+            <PropertyRef Name="PretID" />
+          </Key>
+          <Property Name="PretID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TipInterventieID" Type="Int32" Nullable="false" />
+          <Property Name="DataInceput" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataSfarsit" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Pret1" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Interventie" Relationship="CabinetModel.InterventiePret" FromRole="Pret" ToRole="Interventie" />
+          <NavigationProperty Name="TipIntervenie" Relationship="CabinetModel.TipInterventiePret" FromRole="Pret" ToRole="TipIntervenie" />
+        </EntityType>
+        <EntityType Name="Programare">
+          <Key>
+            <PropertyRef Name="ProgramareID" />
+          </Key>
+          <Property Name="ProgramareID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MedicID" Type="Int32" Nullable="false" />
+          <Property Name="PacientID" Type="Int32" Nullable="false" />
+          <Property Name="DataOra" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TipInterventieID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Medic" Relationship="CabinetModel.ProgramareMedic" FromRole="Programare" ToRole="Medic" />
+          <NavigationProperty Name="Pacient" Relationship="CabinetModel.ProgramarePacient" FromRole="Programare" ToRole="Pacient" />
+          <NavigationProperty Name="TipIntervenie" Relationship="CabinetModel.ProgramareTipInterventie" FromRole="Programare" ToRole="TipIntervenie" />
+        </EntityType>
+        <EntityType Name="TipIntervenie">
+          <Key>
+            <PropertyRef Name="TipInterventieID" />
+          </Key>
+          <Property Name="TipInterventieID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Denumire" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Interventie" Relationship="CabinetModel.InterventieTipInterventie" FromRole="TipIntervenie" ToRole="Interventie" />
+          <NavigationProperty Name="Pret" Relationship="CabinetModel.TipInterventiePret" FromRole="TipIntervenie" ToRole="Pret" />
+          <NavigationProperty Name="Programare" Relationship="CabinetModel.ProgramareTipInterventie" FromRole="TipIntervenie" ToRole="Programare" />
+        </EntityType>
         <Association Name="InterventieMedic">
-          <End Type="CabinetModel.Medic" Role="Medic" Multiplicity="1" />
-          <End Type="CabinetModel.Interventie" Role="Interventie" Multiplicity="*" />
+          <End Role="Medic" Type="CabinetModel.Medic" Multiplicity="1" />
+          <End Role="Interventie" Type="CabinetModel.Interventie" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medic">
               <PropertyRef Name="MedicID" />
@@ -418,8 +359,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="InterventiePacient">
-          <End Type="CabinetModel.Pacient" Role="Pacient" Multiplicity="1" />
-          <End Type="CabinetModel.Interventie" Role="Interventie" Multiplicity="*" />
+          <End Role="Pacient" Type="CabinetModel.Pacient" Multiplicity="1" />
+          <End Role="Interventie" Type="CabinetModel.Interventie" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pacient">
               <PropertyRef Name="PacientID" />
@@ -430,8 +371,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="InterventiePret">
-          <End Type="CabinetModel.Pret" Role="Pret" Multiplicity="1" />
-          <End Type="CabinetModel.Interventie" Role="Interventie" Multiplicity="*" />
+          <End Role="Pret" Type="CabinetModel.Pret" Multiplicity="1" />
+          <End Role="Interventie" Type="CabinetModel.Interventie" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pret">
               <PropertyRef Name="PretID" />
@@ -442,8 +383,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="InterventieTipInterventie">
-          <End Type="CabinetModel.TipIntervenie" Role="TipIntervenie" Multiplicity="1" />
-          <End Type="CabinetModel.Interventie" Role="Interventie" Multiplicity="*" />
+          <End Role="TipIntervenie" Type="CabinetModel.TipIntervenie" Multiplicity="1" />
+          <End Role="Interventie" Type="CabinetModel.Interventie" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TipIntervenie">
               <PropertyRef Name="TipInterventieID" />
@@ -453,76 +394,136 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="PacientMedic">
+          <End Role="Medic" Type="CabinetModel.Medic" Multiplicity="1" />
+          <End Role="Pacient" Type="CabinetModel.Pacient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medic">
+              <PropertyRef Name="MedicID" />
+            </Principal>
+            <Dependent Role="Pacient">
+              <PropertyRef Name="MedicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProgramareMedic">
+          <End Role="Medic" Type="CabinetModel.Medic" Multiplicity="1" />
+          <End Role="Programare" Type="CabinetModel.Programare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medic">
+              <PropertyRef Name="MedicID" />
+            </Principal>
+            <Dependent Role="Programare">
+              <PropertyRef Name="MedicID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProgramarePacient">
+          <End Role="Pacient" Type="CabinetModel.Pacient" Multiplicity="1" />
+          <End Role="Programare" Type="CabinetModel.Programare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pacient">
+              <PropertyRef Name="PacientID" />
+            </Principal>
+            <Dependent Role="Programare">
+              <PropertyRef Name="PacientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipInterventiePret">
+          <End Role="TipIntervenie" Type="CabinetModel.TipIntervenie" Multiplicity="1" />
+          <End Role="Pret" Type="CabinetModel.Pret" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipIntervenie">
+              <PropertyRef Name="TipInterventieID" />
+            </Principal>
+            <Dependent Role="Pret">
+              <PropertyRef Name="TipInterventieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProgramareTipInterventie">
+          <End Role="TipIntervenie" Type="CabinetModel.TipIntervenie" Multiplicity="1" />
+          <End Role="Programare" Type="CabinetModel.Programare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipIntervenie">
+              <PropertyRef Name="TipInterventieID" />
+            </Principal>
+            <Dependent Role="Programare">
+              <PropertyRef Name="TipInterventieID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CabinetModelStoreContainer" CdmEntityContainer="CabinetEntities" >
+        <EntityContainerMapping StorageEntityContainer="CabinetModelStoreContainer" CdmEntityContainer="CabinetEntities">
+          <EntitySetMapping Name="Interventie">
+            <EntityTypeMapping TypeName="CabinetModel.Interventie">
+              <MappingFragment StoreEntitySet="Interventie">
+                <ScalarProperty Name="InterventieID" ColumnName="InterventieID" />
+                <ScalarProperty Name="MedicID" ColumnName="MedicID" />
+                <ScalarProperty Name="PacientID" ColumnName="PacientID" />
+                <ScalarProperty Name="TipInterventieID" ColumnName="TipInterventieID" />
+                <ScalarProperty Name="DataOra" ColumnName="DataOra" />
+                <ScalarProperty Name="PretID" ColumnName="PretID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Medic">
             <EntityTypeMapping TypeName="CabinetModel.Medic">
               <MappingFragment StoreEntitySet="Medic">
-                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
-                <ScalarProperty Name="Pass" ColumnName="Pass" />
-                <ScalarProperty Name="User" ColumnName="User" />
-                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
-                <ScalarProperty Name="Nume" ColumnName="Nume" />
                 <ScalarProperty Name="MedicID" ColumnName="MedicID" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pacient">
             <EntityTypeMapping TypeName="CabinetModel.Pacient">
               <MappingFragment StoreEntitySet="Pacient">
-                <ScalarProperty Name="Sters" ColumnName="Sters" />
-                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
-                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
-                <ScalarProperty Name="Nume" ColumnName="Nume" />
-                <ScalarProperty Name="MedicID" ColumnName="MedicID" />
                 <ScalarProperty Name="PacientID" ColumnName="PacientID" />
+                <ScalarProperty Name="MedicID" ColumnName="MedicID" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Sters" ColumnName="Sters" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pret">
             <EntityTypeMapping TypeName="CabinetModel.Pret">
               <MappingFragment StoreEntitySet="Pret">
-                <ScalarProperty Name="Pret1" ColumnName="Pret" />
-                <ScalarProperty Name="DataSfarsit" ColumnName="DataSfarsit" />
-                <ScalarProperty Name="DataInceput" ColumnName="DataInceput" />
-                <ScalarProperty Name="TipInterventieID" ColumnName="TipInterventieID" />
                 <ScalarProperty Name="PretID" ColumnName="PretID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TipIntervenie">
-            <EntityTypeMapping TypeName="CabinetModel.TipIntervenie">
-              <MappingFragment StoreEntitySet="TipIntervenie">
-                <ScalarProperty Name="Denumire" ColumnName="Denumire" />
                 <ScalarProperty Name="TipInterventieID" ColumnName="TipInterventieID" />
+                <ScalarProperty Name="DataInceput" ColumnName="DataInceput" />
+                <ScalarProperty Name="DataSfarsit" ColumnName="DataSfarsit" />
+                <ScalarProperty Name="Pret1" ColumnName="Pret" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Programare">
             <EntityTypeMapping TypeName="CabinetModel.Programare">
               <MappingFragment StoreEntitySet="Programare">
-                <ScalarProperty Name="TipInterventieID" ColumnName="TipInterventieID" />
-                <ScalarProperty Name="DataOra" ColumnName="DataOra" />
-                <ScalarProperty Name="PacientID" ColumnName="PacientID" />
-                <ScalarProperty Name="MedicID" ColumnName="MedicID" />
                 <ScalarProperty Name="ProgramareID" ColumnName="ProgramareID" />
+                <ScalarProperty Name="MedicID" ColumnName="MedicID" />
+                <ScalarProperty Name="PacientID" ColumnName="PacientID" />
+                <ScalarProperty Name="DataOra" ColumnName="DataOra" />
+                <ScalarProperty Name="TipInterventieID" ColumnName="TipInterventieID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Interventie">
-            <EntityTypeMapping TypeName="CabinetModel.Interventie">
-              <MappingFragment StoreEntitySet="Interventie">
-                <ScalarProperty Name="PretID" ColumnName="PretID" />
-                <ScalarProperty Name="DataOra" ColumnName="DataOra" />
+          <EntitySetMapping Name="TipIntervenie">
+            <EntityTypeMapping TypeName="CabinetModel.TipIntervenie">
+              <MappingFragment StoreEntitySet="TipIntervenie">
                 <ScalarProperty Name="TipInterventieID" ColumnName="TipInterventieID" />
-                <ScalarProperty Name="PacientID" ColumnName="PacientID" />
-                <ScalarProperty Name="MedicID" ColumnName="MedicID" />
-                <ScalarProperty Name="InterventieID" ColumnName="InterventieID" />
+                <ScalarProperty Name="Denumire" ColumnName="Denumire" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -540,7 +541,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

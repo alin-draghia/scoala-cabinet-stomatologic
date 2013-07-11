@@ -24,30 +24,23 @@ namespace Cabinet
         {
             try
             {
-                var dummy_hack = db.Medic.ToList();
-                medicBindingSource.DataSource = db.Medic.Local;
-                
+                var tmp = db.Medic.ToList();                                 
+                medicBindingSource.DataSource = db.Medic.Local;                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 
-                throw;
-            }      
+            }
         }
 
         private void medicBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                var errors = db.GetValidationErrors();
-                throw ex;
-            }            
-        }
+            
+        }               
 
-      
+        private void medicBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            db.SaveChanges();      
+        }        
     }
 }

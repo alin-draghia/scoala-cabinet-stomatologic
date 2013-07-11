@@ -25,11 +25,11 @@ namespace Cabinet
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Interventie> Interventie { get; set; }
         public DbSet<Medic> Medic { get; set; }
         public DbSet<Pacient> Pacient { get; set; }
         public DbSet<Pret> Pret { get; set; }
-        public DbSet<TipIntervenie> TipIntervenie { get; set; }
         public DbSet<Programare> Programare { get; set; }
-        public DbSet<Interventie> Interventie { get; set; }
+        public DbSet<TipIntervenie> TipIntervenie { get; set; }
     }
 }

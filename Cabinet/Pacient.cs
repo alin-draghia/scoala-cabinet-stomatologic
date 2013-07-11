@@ -16,8 +16,8 @@ namespace Cabinet
     {
         public Pacient()
         {
-            this.Programare = new HashSet<Programare>();
             this.Interventie = new HashSet<Interventie>();
+            this.Programare = new HashSet<Programare>();
         }
     
         public int PacientID { get; set; }
@@ -27,8 +27,8 @@ namespace Cabinet
         public string Telefon { get; set; }
         public bool Sters { get; set; }
     
+        public virtual ICollection<Interventie> Interventie { get; set; }
         public virtual Medic Medic { get; set; }
         public virtual ICollection<Programare> Programare { get; set; }
-        public virtual ICollection<Interventie> Interventie { get; set; }
     }
 }

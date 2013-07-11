@@ -25,7 +25,7 @@ namespace Cabinet
         public System.DateTime DataSfarsit { get; set; }
         public decimal Pret1 { get; set; }
     
-        public virtual TipIntervenie TipIntervenie { get; set; }
         public virtual ICollection<Interventie> Interventie { get; set; }
+        public virtual TipIntervenie TipIntervenie { get; set; }
     }
 }

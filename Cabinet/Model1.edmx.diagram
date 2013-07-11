@@ -4,22 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b06915ebacf4443682e953532188189d" Name="Diagram1" ZoomLevel="52" >
-        <EntityTypeShape EntityType="CabinetModel.Medic" Width="1.5" PointX="7.625" PointY="24.375" />
-        <EntityTypeShape EntityType="CabinetModel.Pacient" Width="1.5" PointX="9.875" PointY="23.75" />
-        <AssociationConnector Association="CabinetModel.PacientMedic" />
-        <EntityTypeShape EntityType="CabinetModel.Pret" Width="1.5" PointX="8.75" PointY="28.25" />
-        <EntityTypeShape EntityType="CabinetModel.TipIntervenie" Width="1.5" PointX="6.5" PointY="28.375" />
-        <AssociationConnector Association="CabinetModel.TipInterventiePret" />
-        <EntityTypeShape EntityType="CabinetModel.Programare" Width="1.5" PointX="3" PointY="27" />
-        <AssociationConnector Association="CabinetModel.ProgramareMedic" />
-        <AssociationConnector Association="CabinetModel.ProgramarePacient" />
-        <AssociationConnector Association="CabinetModel.ProgramareTipInterventie" />
-        <EntityTypeShape EntityType="CabinetModel.Interventie" Width="1.5" PointX="13.75" PointY="25.875" />
-        <AssociationConnector Association="CabinetModel.InterventieMedic" />
-        <AssociationConnector Association="CabinetModel.InterventiePacient" />
-        <AssociationConnector Association="CabinetModel.InterventiePret" />
-        <AssociationConnector Association="CabinetModel.InterventieTipInterventie" />
+      <Diagram DiagramId="83ba84344eaa46a6ac70870112558bd0" Name="Diagram1">
+        <EntityTypeShape EntityType="CabinetModel.Interventie" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CabinetModel.Medic" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CabinetModel.Pacient" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CabinetModel.Pret" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CabinetModel.Programare" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CabinetModel.TipIntervenie" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="CabinetModel.InterventieMedic" ManuallyRouted="false" />
+        <AssociationConnector Association="CabinetModel.InterventiePacient" ManuallyRouted="false" />
+        <AssociationConnector Association="CabinetModel.InterventiePret" ManuallyRouted="false" />
+        <AssociationConnector Association="CabinetModel.InterventieTipInterventie" ManuallyRouted="false" />
+        <AssociationConnector Association="CabinetModel.PacientMedic" ManuallyRouted="false" />
+        <AssociationConnector Association="CabinetModel.ProgramareMedic" ManuallyRouted="false" />
+        <AssociationConnector Association="CabinetModel.ProgramarePacient" ManuallyRouted="false" />
+        <AssociationConnector Association="CabinetModel.TipInterventiePret" ManuallyRouted="false" />
+        <AssociationConnector Association="CabinetModel.ProgramareTipInterventie" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
