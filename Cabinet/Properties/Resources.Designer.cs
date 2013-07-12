@@ -77,5 +77,25 @@ namespace Cabinet.Properties {
                 return ResourceManager.GetString("AdminUser", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skuchzn {
+            get {
+                object obj = ResourceManager.GetObject("skuchzn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xabxtdp {
+            get {
+                object obj = ResourceManager.GetObject("xabxtdp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
