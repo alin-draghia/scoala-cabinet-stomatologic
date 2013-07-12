@@ -68,7 +68,7 @@ namespace Cabinet
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+           
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +102,57 @@ namespace Cabinet
             {
                 childForm.Close();
             }
+        }
+
+        private void pacientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms["PacientiForm"] as PacientiForm) == null)
+            {
+                var form = new PacientiForm();
+                form.MdiParent = this;
+                form.Show();
+            }   
+        }
+
+        private void programariToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms["ProgramariForm"] as ProgramariForm) == null)
+            {
+                var form = new ProgramariForm();
+                form.MdiParent = this;
+                form.Show();
+            }   
+        }
+
+        private void interventiiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms["InterventiiForm"] as InterventiiForm) == null)
+            {
+                var form = new InterventiiForm();
+                form.MdiParent = this;
+                form.Show();
+            }   
+
+        }
+
+        private void listaPreturiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms["ListaPreturiForm"] as ListaPreturiForm) == null)
+            {
+                var form = new ListaPreturiForm();
+                form.MdiParent = this;
+                form.Show();
+            }   
+        }
+
+        private void listaProgramariCurenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms["ListaProgramariCurenteForm"] as ListaProgramariCurenteForm) == null)
+            {
+                var form = new ListaProgramariCurenteForm();
+                form.MdiParent = this;
+                form.Show();
+            }   
         }
     }
 }

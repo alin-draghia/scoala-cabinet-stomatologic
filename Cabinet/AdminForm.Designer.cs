@@ -40,8 +40,6 @@
             this.mediciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.interventiiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preturiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +70,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(861, 24);
+            this.menuStrip.Size = new System.Drawing.Size(784, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -125,44 +123,35 @@
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mediciToolStripMenuItem,
             this.interventiiToolStripMenuItem,
-            this.preturiToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.optionsToolStripMenuItem});
+            this.preturiToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
-            this.toolsMenu.Size = new System.Drawing.Size(48, 20);
-            this.toolsMenu.Text = "&Tools";
+            this.toolsMenu.ShortcutKeys = System.Windows.Forms.Keys.F10;
+            this.toolsMenu.Size = new System.Drawing.Size(52, 20);
+            this.toolsMenu.Text = "Forms";
             // 
             // mediciToolStripMenuItem
             // 
             this.mediciToolStripMenuItem.Name = "mediciToolStripMenuItem";
-            this.mediciToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.mediciToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
+            this.mediciToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.mediciToolStripMenuItem.Text = "Medici";
             this.mediciToolStripMenuItem.Click += new System.EventHandler(this.mediciToolStripMenuItem_Click);
             // 
             // interventiiToolStripMenuItem
             // 
             this.interventiiToolStripMenuItem.Name = "interventiiToolStripMenuItem";
-            this.interventiiToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.interventiiToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
+            this.interventiiToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.interventiiToolStripMenuItem.Text = "Interventii";
             this.interventiiToolStripMenuItem.Click += new System.EventHandler(this.interventiiToolStripMenuItem_Click);
             // 
             // preturiToolStripMenuItem
             // 
             this.preturiToolStripMenuItem.Name = "preturiToolStripMenuItem";
-            this.preturiToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.preturiToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F3)));
+            this.preturiToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.preturiToolStripMenuItem.Text = "Preturi";
             this.preturiToolStripMenuItem.Click += new System.EventHandler(this.preturiToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(124, 6);
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // windowsMenu
             // 
@@ -261,9 +250,9 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 453);
+            this.statusStrip.Location = new System.Drawing.Point(0, 540);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(861, 22);
+            this.statusStrip.Size = new System.Drawing.Size(784, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -278,7 +267,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Cabinet.Properties.Resources.skuchzn;
-            this.ClientSize = new System.Drawing.Size(861, 475);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.DoubleBuffered = true;
@@ -309,7 +298,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsMenu;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowsMenu;
         private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
@@ -322,7 +310,6 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem mediciToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem interventiiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem preturiToolStripMenuItem;
     }
 }
