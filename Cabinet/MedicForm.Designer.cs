@@ -42,6 +42,7 @@
             this.interventiiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaPreturiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaProgramariCurenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.listaProgramariCurenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacientiNrInterventiiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -161,7 +162,8 @@
             // 
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listaPreturiToolStripMenuItem,
-            this.listaProgramariCurenteToolStripMenuItem});
+            this.listaProgramariCurenteToolStripMenuItem,
+            this.pacientiNrInterventiiToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -172,6 +174,13 @@
             this.listaPreturiToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.listaPreturiToolStripMenuItem.Text = "Lista Preturi";
             this.listaPreturiToolStripMenuItem.Click += new System.EventHandler(this.listaPreturiToolStripMenuItem_Click);
+            // 
+            // listaProgramariCurenteToolStripMenuItem
+            // 
+            this.listaProgramariCurenteToolStripMenuItem.Name = "listaProgramariCurenteToolStripMenuItem";
+            this.listaProgramariCurenteToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.listaProgramariCurenteToolStripMenuItem.Text = "Lista Programari Curente";
+            this.listaProgramariCurenteToolStripMenuItem.Click += new System.EventHandler(this.listaProgramariCurenteToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -282,12 +291,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // listaProgramariCurenteToolStripMenuItem
+            // pacientiNrInterventiiToolStripMenuItem
             // 
-            this.listaProgramariCurenteToolStripMenuItem.Name = "listaProgramariCurenteToolStripMenuItem";
-            this.listaProgramariCurenteToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.listaProgramariCurenteToolStripMenuItem.Text = "Lista Programari Curente";
-            this.listaProgramariCurenteToolStripMenuItem.Click += new System.EventHandler(this.listaProgramariCurenteToolStripMenuItem_Click);
+            this.pacientiNrInterventiiToolStripMenuItem.Name = "pacientiNrInterventiiToolStripMenuItem";
+            this.pacientiNrInterventiiToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.pacientiNrInterventiiToolStripMenuItem.Text = "Pacienti nr Interventii";
+            this.pacientiNrInterventiiToolStripMenuItem.Click += new System.EventHandler(this.pacientiNrInterventiiToolStripMenuItem_Click);
             // 
             // MedicForm
             // 
@@ -341,6 +350,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaPreturiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaProgramariCurenteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pacientiNrInterventiiToolStripMenuItem;
     }
 }
 

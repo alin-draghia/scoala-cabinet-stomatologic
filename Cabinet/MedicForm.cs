@@ -154,5 +154,15 @@ namespace Cabinet
                 form.Show();
             }   
         }
+
+        private void pacientiNrInterventiiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if ((Application.OpenForms["PacientiNrInterventii"] as PacientiNrInterventii) == null)
+            {
+                var form = new PacientiNrInterventii();
+                form.MdiParent = this;
+                form.Show();
+            }   
+        }
     }
 }

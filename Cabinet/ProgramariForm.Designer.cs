@@ -258,7 +258,7 @@
             // 
             // dataDateTimePicker
             // 
-            this.dataDateTimePicker.CustomFormat = "dd:MM:yyyy hh:mm";
+            this.dataDateTimePicker.CustomFormat = "dd:MM:yyyy HH:mm";
             this.dataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.programareBindingSource, "DataOra", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dataDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dataDateTimePicker.Location = new System.Drawing.Point(15, 64);

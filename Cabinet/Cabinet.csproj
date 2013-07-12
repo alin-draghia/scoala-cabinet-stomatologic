@@ -151,6 +151,12 @@
     <Compile Include="PacientiForm.Designer.cs">
       <DependentUpon>PacientiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PacientiNrInterventii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PacientiNrInterventii.Designer.cs">
+      <DependentUpon>PacientiNrInterventii.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pret.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PacientiForm.resx">
       <DependentUpon>PacientiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacientiNrInterventii.resx">
+      <DependentUpon>PacientiNrInterventii.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgramariForm.resx">
       <DependentUpon>ProgramariForm.cs</DependentUpon>

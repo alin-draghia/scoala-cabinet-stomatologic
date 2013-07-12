@@ -60,22 +60,12 @@
             this.pacientIDComboBox = new System.Windows.Forms.ComboBox();
             this.pacientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pretDisplayTextBox = new System.Windows.Forms.TextBox();
+            this.pretBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.interventieDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pretBindingSource = new System.Windows.Forms.BindingSource(this.components);
             dataOraLabel = new System.Windows.Forms.Label();
             interventieIDLabel = new System.Windows.Forms.Label();
             medicIDLabel = new System.Windows.Forms.Label();
@@ -88,8 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.interventieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipIntervenieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.interventieDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pretBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.interventieDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataOraLabel
@@ -280,15 +270,17 @@
             // interventieBindingNavigatorSaveItem
             // 
             this.interventieBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.interventieBindingNavigatorSaveItem.Enabled = false;
             this.interventieBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("interventieBindingNavigatorSaveItem.Image")));
             this.interventieBindingNavigatorSaveItem.Name = "interventieBindingNavigatorSaveItem";
             this.interventieBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.interventieBindingNavigatorSaveItem.Text = "Save Data";
+            this.interventieBindingNavigatorSaveItem.Click += new System.EventHandler(this.interventieBindingNavigatorSaveItem_Click);
             // 
             // dataOraDateTimePicker
             // 
+            this.dataOraDateTimePicker.CustomFormat = "dd/MM/yyy HH:mm";
             this.dataOraDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.interventieBindingSource, "DataOra", true));
+            this.dataOraDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dataOraDateTimePicker.Location = new System.Drawing.Point(15, 55);
             this.dataOraDateTimePicker.Name = "dataOraDateTimePicker";
             this.dataOraDateTimePicker.Size = new System.Drawing.Size(200, 20);
@@ -332,6 +324,7 @@
             this.tipInterventieIDComboBox.Size = new System.Drawing.Size(200, 21);
             this.tipInterventieIDComboBox.TabIndex = 14;
             this.tipInterventieIDComboBox.ValueMember = "TipInterventieID";
+            this.tipInterventieIDComboBox.SelectedIndexChanged += new System.EventHandler(this.tipInterventieIDComboBox_SelectedIndexChanged);
             // 
             // tipIntervenieBindingSource
             // 
@@ -362,129 +355,61 @@
             this.pretDisplayTextBox.Size = new System.Drawing.Size(200, 20);
             this.pretDisplayTextBox.TabIndex = 18;
             // 
+            // pretBindingSource
+            // 
+            this.pretBindingSource.DataSource = typeof(Cabinet.Pret);
+            // 
             // interventieDataGridView
             // 
+            this.interventieDataGridView.AllowUserToAddRows = false;
+            this.interventieDataGridView.AllowUserToDeleteRows = false;
             this.interventieDataGridView.AutoGenerateColumns = false;
             this.interventieDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.interventieDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
             this.interventieDataGridView.DataSource = this.interventieBindingSource;
             this.interventieDataGridView.Location = new System.Drawing.Point(231, 55);
             this.interventieDataGridView.Name = "interventieDataGridView";
+            this.interventieDataGridView.ReadOnly = true;
             this.interventieDataGridView.Size = new System.Drawing.Size(399, 290);
             this.interventieDataGridView.TabIndex = 18;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "InterventieID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "InterventieID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "MedicID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "MedicID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "PacientID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "PacientID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "TipInterventieID";
-            this.dataGridViewTextBoxColumn4.HeaderText = "TipInterventieID";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "DataOra";
             this.dataGridViewTextBoxColumn5.HeaderText = "DataOra";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "PretID";
-            this.dataGridViewTextBoxColumn6.HeaderText = "PretID";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Medic";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Medic";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Pacient";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Pacient";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Pret";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Pret";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "TipIntervenie";
-            this.dataGridViewTextBoxColumn10.HeaderText = "TipIntervenie";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "PacientDisplayName";
-            this.dataGridViewTextBoxColumn11.HeaderText = "PacientDisplayName";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Pacient";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "MedicDisplayName";
-            this.dataGridViewTextBoxColumn12.HeaderText = "MedicDisplayName";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "InterventieDisplayName";
-            this.dataGridViewTextBoxColumn13.HeaderText = "InterventieDisplayName";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Interventie";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "PretDisplay";
-            this.dataGridViewTextBoxColumn14.HeaderText = "PretDisplay";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Pret";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // pretBindingSource
-            // 
-            this.pretBindingSource.DataSource = typeof(Cabinet.Pret);
             // 
             // InterventiiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(651, 369);
-            this.Controls.Add(this.interventieDataGridView);
             this.Controls.Add(pretDisplayLabel);
             this.Controls.Add(this.pretDisplayTextBox);
             this.Controls.Add(this.pacientIDComboBox);
@@ -500,6 +425,7 @@
             this.Controls.Add(tipInterventieIDLabel);
             this.Controls.Add(this.interventieBindingNavigator);
             this.Controls.Add(this.medicIDTextBox);
+            this.Controls.Add(this.interventieDataGridView);
             this.Name = "InterventiiForm";
             this.Text = "Interventii";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InterventiiForm_FormClosing);
@@ -510,8 +436,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.interventieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipIntervenieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.interventieDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pretBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.interventieDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,20 +469,10 @@
         private System.Windows.Forms.BindingSource pacientBindingSource;
         private System.Windows.Forms.TextBox pretDisplayTextBox;
         private System.Windows.Forms.DataGridView interventieDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.BindingSource pretBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.BindingSource pretBindingSource;
     }
 }
